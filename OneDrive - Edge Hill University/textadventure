@@ -1,0 +1,34 @@
+#A simple Text Adventure program that utilises user input and random number generation in the form of a dice roll.
+
+print("You approach the dark forest you heard about from the rumours in the tavern. According to their tales theres a hidden chest somewhere inside filled with priceless jewels. Do you want to enter? (y/n)")
+
+choice1=input("Make your choice: ")
+
+if choice1=="y":
+    print("you enter the forest and see a cat, would you like to follow it? (y/n)")
+    choice2=input("Make your choice: ")
+    if choice2=="y":
+        print("You follow the cat and get lost in the forest.")
+        exit()
+    elif choice2=="n":
+        print("You ignore the cat and walk deeper into the forest, where you find an abandoned looking cabin. Open the door? y/n")
+        choice3=input("Make your choice: ")
+        if choice3=="y":
+            print("You enter the cabin where you find a glittering chest full of abandoned jewels, you're rich!")
+            exit()
+        elif choice3=="n":
+            print("You decide to ignore the cabin and continue walking. In the distance the whailing sound of a girl crying haunts your ears. Its getting closer... You attempt to run but must roll a dexterity check or else you'll fall over your own feet.") #, you're enveloped by darkness. You lose.")
+            input("Press enter to roll a d20: ")
+            import random
+            roll=random.randint(1,20)
+            print("You rolled a", roll)
+            if roll>=12:
+                print("You successfully run away and escape the forest. Yet youll never know where the missing jewels were")
+                exit()
+            else:
+                print("You trip over your own feet during the panic and fall. You're enveloped by darkness. You lose.")
+                exit()
+
+elif choice1=="n":
+    print("You go home")
+exit()
