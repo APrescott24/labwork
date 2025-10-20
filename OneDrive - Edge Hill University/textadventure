@@ -8,13 +8,13 @@ if choice1=="y":
     print("you enter the forest and see a cat, would you like to follow it? (y/n)")
     choice2=input("Make your choice: ")
     if choice2=="y":
-        print("You follow the cat and get lost in the forest.")
+        print("You follow the cat and get lost in the forest. You lose.")
         exit()
     elif choice2=="n":
         print("You ignore the cat and walk deeper into the forest, where you find an abandoned looking cabin. Open the door? y/n")
         choice3=input("Make your choice: ")
         if choice3=="y":
-            print("You enter the cabin where you find a glittering chest full of abandoned jewels, you're rich!")
+            print("You enter the cabin where you find a glittering chest full of abandoned jewels, you're rich! You successfully completed this adventure.")
             exit()
         elif choice3=="n":
             print("You decide to ignore the cabin and continue walking. In the distance the whailing sound of a girl crying haunts your ears. Its getting closer... You attempt to run but must roll a dexterity check or else you'll fall over your own feet.") #, you're enveloped by darkness. You lose.")
@@ -30,5 +30,5 @@ if choice1=="y":
                 exit()
 
 elif choice1=="n":
-    print("You go home")
+    print("You go back home, giving up before even starting. You lose")
 exit()
