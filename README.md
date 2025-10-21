@@ -1,1 +1,1 @@
-Work completed in lab exercises
+A collection of work completed during University lab exercises.
