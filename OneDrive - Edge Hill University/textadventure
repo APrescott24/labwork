@@ -2,33 +2,33 @@
 
 print("You approach the dark forest you heard about from the rumours in the tavern. According to their tales theres a hidden chest somewhere inside filled with priceless jewels. Do you want to enter? (y/n)")
 
-choice1=input("Make your choice: ")
+choice1=input("Make your choice: ") #the beginning choice that will only accept a y or n answer.
 
 if choice1=="y":
-    print("you enter the forest and see a cat, would you like to follow it? (y/n)")
+    print("you enter the forest and see a cat, would you like to follow it? (y/n)") #a nested choice if the user chose y at the start
     choice2=input("Make your choice: ")
     if choice2=="y":
-        print("You follow the cat and get lost in the forest. You lose.")
+        print("You follow the cat and get lost in the forest. You lose.") #here y is the incorrect outcome
         exit()
     elif choice2=="n":
         print("You ignore the cat and walk deeper into the forest, where you find an abandoned looking cabin. Open the door? y/n")
-        choice3=input("Make your choice: ")
+        choice3=input("Make your choice: ") #if n is chosen on the second prompt, we continue here
         if choice3=="y":
-            print("You enter the cabin where you find a glittering chest full of abandoned jewels, you're rich! You successfully completed this adventure.")
+            print("You enter the cabin where you find a glittering chest full of abandoned jewels, you're rich!") #here is the outcome if y is selected when prompted to enter the cabin, this outcome is the games true win condition
             exit()
         elif choice3=="n":
             print("You decide to ignore the cabin and continue walking. In the distance the whailing sound of a girl crying haunts your ears. Its getting closer... You attempt to run but must roll a dexterity check or else you'll fall over your own feet.") #, you're enveloped by darkness. You lose.")
-            input("Press enter to roll a d20: ")
+            input("Press enter to roll a d20: ") #an iteration of chance is introduced here in the form of a dice roll
             import random
-            roll=random.randint(1,20)
-            print("You rolled a", roll)
-            if roll>=12:
+            roll=random.randint(1,20) #random.randint will generate a random integer, 1,20 states it will be between 1 and 20
+            print("You rolled a", roll) #here it will print the result of the roll using the variable 'roll'
+            if roll>=12: #if the roll is greater than or equal to 12, the user will escape but not ultimately win the adventure
                 print("You successfully run away and escape the forest. Yet youll never know where the missing jewels were")
                 exit()
             else:
                 print("You trip over your own feet during the panic and fall. You're enveloped by darkness. You lose.")
-                exit()
+                exit() #here is the outcome if the user gets less than 12 on the roll, they will lose and the game will exit
 
 elif choice1=="n":
-    print("You go back home, giving up before even starting. You lose")
+    print("You go home") #here is the outcomes of the beginning choice if n
 exit()
